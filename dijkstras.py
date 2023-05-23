@@ -38,7 +38,7 @@ class Graph():
 		dist[src] = 0
 		sptSet = [False] * self.V
 
-		for i in range(self.V):
+		for _ in range(self.V):
 			# pick the minimum distance vertex from the set of vertices not yet processed
 			# u is always equal to src in first iteration
 			u = self.minDistance(dist, sptSet)
