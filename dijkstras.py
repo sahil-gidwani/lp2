@@ -20,16 +20,14 @@ class Graph():
 		for node in range(self.V):
 			print(node, "\t\t", dist[node])
 
-	# A utility function to find the vertex with
-	# minimum distance value, from the set of vertices
+	# a utility function to find the vertex with minimum distance value, from the set of vertices
 	# not yet included in shortest path tree
 	def minDistance(self, dist, sptSet):
 
-		# Initialize minimum distance for next node
+		# initialize minimum distance for next node
 		min = 1e7
 
-		# Search not nearest vertex not in the
-		# shortest path tree
+		# search not nearest vertex not in the shortest path tree
 		for v in range(self.V):
 			if dist[v] < min and sptSet[v] == False:
 				min = dist[v]
@@ -37,9 +35,6 @@ class Graph():
 
 		return min_index
 
-	# Function that implements Dijkstra's single source
-	# shortest path algorithm for a graph represented
-	# using adjacency matrix representation
 	def dijkstra(self, src):
 
 		dist = [1e7] * self.V
@@ -48,19 +43,15 @@ class Graph():
 
 		for i in range(self.V):
 
-			# Pick the minimum distance vertex from
-			# the set of vertices not yet processed.
+			# pick the minimum distance vertex from the set of vertices not yet processed
 			# u is always equal to src in first iteration
 			u = self.minDistance(dist, sptSet)
 
-			# Put the minimum distance vertex in the
-			# shortest path tree
+			# put the minimum distance vertex in the shortest path tree
 			sptSet[u] = True
 
-			# Update dist value of the adjacent vertices
-			# of the picked vertex only if the current
-			# distance is greater than new distance and
-			# the vertex in not in the shortest path tree
+			# update dist value of the adjacent vertices of the picked vertex only if the current
+			# distance is greater than new distance and the vertex in not in the shortest path tree
 			for v in range(self.V):
 				if (self.graph[u][v] > 0 and
 				sptSet[v] == False and
