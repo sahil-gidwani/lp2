@@ -7,7 +7,9 @@ class Graph:
         self.graph = defaultdict(list)
 
     def addEdge(self, u, v):
+        # undirected graph 
         self.graph[u].append(v)
+        self.graph[v].append(u)
 
     def displayGraph(self):
         for u in self.graph:
@@ -36,7 +38,7 @@ class Graph:
         # self.DFSUtil(2, visited) # to start from a particular vertex
 
     def BFS(self):
-        s = 0
+        s = 0 # start vertex
 
         V = len(self.graph)
         visited = [False]*(V)
@@ -60,11 +62,10 @@ g = Graph()
 g.addEdge(0, 1)
 g.addEdge(0, 2)
 g.addEdge(1, 2)
-g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
 
-# Take input for adding edges
+# take input for adding edges
 # while True:
 #     u = input("Enter the source vertex (or 'q' to quit): ")
 #     if u == 'q':
@@ -72,7 +73,6 @@ g.addEdge(3, 3)
 #     v = input("Enter the destination vertex: ")
 #     g.addEdge(int(u), int(v))
 
-# Display the graph
 print("Graph:")
 g.displayGraph()
 
