@@ -37,16 +37,15 @@ class Graph:
         
         # self.DFSUtil(2, visited) # to start from a particular vertex
 
-    def BFS(self):
-        s = 0 # start vertex
+    def BFS(self, src):
 
         V = len(self.graph)
         visited = [False]*(V)
 
         queue = []
 
-        queue.append(s)
-        visited[s] = True
+        queue.append(src)
+        visited[src] = True
 
         while queue:
             v = queue.pop(0)
@@ -80,4 +79,4 @@ print("Following is Depth First Traversal")
 g.DFS()
 
 print("Following is Breadth First Traversal (starting from vertex 0)")
-g.BFS()
+g.BFS(0)
