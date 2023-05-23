@@ -23,8 +23,6 @@ class Graph():
 	# a utility function to find the vertex with minimum distance value, from the set of vertices
 	# not yet included in shortest path tree
 	def minDistance(self, dist, sptSet):
-
-		# initialize minimum distance for next node
 		min = 1e7
 
 		# search not nearest vertex not in the shortest path tree
@@ -36,13 +34,11 @@ class Graph():
 		return min_index
 
 	def dijkstra(self, src):
-
 		dist = [1e7] * self.V
 		dist[src] = 0
 		sptSet = [False] * self.V
 
 		for i in range(self.V):
-
 			# pick the minimum distance vertex from the set of vertices not yet processed
 			# u is always equal to src in first iteration
 			u = self.minDistance(dist, sptSet)
