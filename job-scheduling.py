@@ -1,7 +1,7 @@
 def printJobScheduling(arr, t):
 	n = len(arr)
 
-	# sort all jobs according to decreasing order of profit
+	# bubble sort all jobs according to decreasing order of profit
 	for i in range(n):
 		for j in range(n - 1 - i):
 			if arr[j][2] < arr[j + 1][2]:
@@ -28,6 +28,7 @@ def printJobScheduling(arr, t):
 
 	print(job)
 
+# [jobID, deadline, profit]
 arr = [['a', 2, 100],
         ['b', 1, 19],
         ['c', 2, 27],
