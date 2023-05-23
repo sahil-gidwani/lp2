@@ -27,15 +27,15 @@ class Graph:
             if visited[i] == False:
                 self.DFSUtil(i, visited)
 
-    def DFS(self):
+    def DFS(self, src):
         V = len(self.graph)
         visited = [False]*(V)
 
-        for i in range(V):
-            if visited[i] == False:
-                self.DFSUtil(i, visited)
+        # for i in range(V):
+        #     if visited[i] == False:
+        #         self.DFSUtil(i, visited)
         
-        # self.DFSUtil(2, visited) # to start from a particular vertex
+        self.DFSUtil(src, visited)
 
     def BFS(self, src):
 
@@ -76,7 +76,7 @@ print("Graph:")
 g.displayGraph()
 
 print("Following is Depth First Traversal")
-g.DFS()
+g.DFS(0)
 
 print("Following is Breadth First Traversal (starting from vertex 0)")
 g.BFS(0)
