@@ -56,8 +56,7 @@ def solveNQUtil(board, col):
 # placement of queens in the form of 1s. note that there may be more than one
 # solutions, this function prints one of the feasible solutions.
 def solveNQ():
-	board = [[0 for i in range(N)]
-				for j in range(N)]
+	board = [[0 for _ in range(N)] for _ in range(N)]
 
 	if solveNQUtil(board, 0) == False:
 		print ("Solution does not exist")
