@@ -2,8 +2,7 @@ class Graph():
 	
 	def __init__(self, vertices):
 		self.V = vertices
-		self.graph = [[0 for column in range(vertices)]
-					for row in range(vertices)]
+		self.graph = [[0 for _ in range(vertices)] for _ in range(vertices)]
 	
 	def addEdge(self, u, v, dist):
 		# undirected graph 
@@ -56,12 +55,10 @@ class Graph():
 			# update dist value of the adjacent vertices of the picked vertex only if the current
 			# distance is greater than new distance and the vertex in not in the shortest path tree
 			for v in range(self.V):
-
 				# graph[u][v] is non zero only for adjacent vertices of m
 				# mstSet[v] is false for vertices not yet included in MST
 				# update the key only if graph[u][v] is smaller than key[v]
-				if self.graph[u][v] > 0 and mstSet[v] == False \
-				and key[v] > self.graph[u][v]:
+				if self.graph[u][v] > 0 and mstSet[v] == False and key[v] > self.graph[u][v]:
 					key[v] = self.graph[u][v]
 					parent[v] = u
 
