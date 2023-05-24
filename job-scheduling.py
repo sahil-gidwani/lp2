@@ -14,12 +14,10 @@ def printJobScheduling(arr, t):
 	job = ['-1'] * t
 
 	# iterate through all given jobs
-	for i in range(len(arr)):
-
+	for i in range(n):
 		# find a free slot for this job
 		# (note that we start from the last possible slot)
 		for j in range(min(t - 1, arr[i][1] - 1), -1, -1):
-
 			# free slot found
 			if result[j] is False:
 				result[j] = True
@@ -34,7 +32,6 @@ arr = [['a', 2, 100],
         ['c', 2, 27],
         ['d', 1, 25],
         ['e', 3, 15]]
-
 
 print("Following is maximum profit sequence of jobs")
 printJobScheduling(arr, 3)
