@@ -2,7 +2,7 @@ class Graph():
 
 	def __init__(self, vertices):
 		self.V = vertices
-		self.graph = [[0 for column in range(vertices)] for row in range(vertices)]
+		self.graph = [[0 for _ in range(vertices)] for _ in range(vertices)]
 	
 	def addEdge(self, u, v, dist):
 		# undirected graph 
@@ -49,9 +49,7 @@ class Graph():
 			# update dist value of the adjacent vertices of the picked vertex only if the current
 			# distance is greater than new distance and the vertex in not in the shortest path tree
 			for v in range(self.V):
-				if (self.graph[u][v] > 0 and
-				sptSet[v] == False and
-				dist[v] > dist[u] + self.graph[u][v]):
+				if (self.graph[u][v] > 0 and sptSet[v] == False and dist[v] > dist[u] + self.graph[u][v]):
 					dist[v] = dist[u] + self.graph[u][v]
 
 		self.printSolution(dist)
