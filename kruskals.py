@@ -52,7 +52,6 @@ class Graph():
 
 		# number of edges to be taken is less than to V-1
 		while e < self.V - 1:
-
 			# pick the smallest edge and increment the index for next iteration
 			u, v, w = self.graph[i]
 			i = i + 1
