@@ -63,7 +63,7 @@ def solveNQueens():
 	for rr in range(N):
 		for cc in range(N):
 			slashCode[rr][cc] = rr + cc
-			backslashCode[rr][cc] = rr - cc + 7
+			backslashCode[rr][cc] = rr - cc + (N - 1)
 	
 	if(solveNQueensUtil(board, 0, slashCode, backslashCode, rowLookup, slashCodeLookup, backslashCodeLookup) == False):
 		print("Solution does not exist")
