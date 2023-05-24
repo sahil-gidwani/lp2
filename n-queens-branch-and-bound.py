@@ -7,12 +7,8 @@ def printSolution(board):
 		print()
 
 # an optimized function to check if a queen can be placed on board[row][col]
-def isSafe(row, col, slashCode, backslashCode,
-		rowLookup, slashCodeLookup,
-					backslashCodeLookup):
-	if (slashCodeLookup[slashCode[row][col]] or
-		backslashCodeLookup[backslashCode[row][col]] or
-		rowLookup[row]):
+def isSafe(row, col, slashCode, backslashCode, rowLookup, slashCodeLookup, backslashCodeLookup):
+	if (slashCodeLookup[slashCode[row][col]] or backslashCodeLookup[backslashCode[row][col]] or rowLookup[row]):
 		return False
 	return True
 
@@ -31,10 +27,7 @@ def solveNQueensUtil(board, col, slashCode, backslashCode, rowLookup, slashCodeL
 			backslashCodeLookup[backslashCode[i][col]] = True
 			
 			# recur to place rest of the queens
-			if(solveNQueensUtil(board, col + 1,
-								slashCode, backslashCode,
-								rowLookup, slashCodeLookup,
-								backslashCodeLookup)):
+			if(solveNQueensUtil(board, col + 1, slashCode, backslashCode, rowLookup, slashCodeLookup, backslashCodeLookup)):
 				return True
 			
 			# if placing queen in board[i][col] doesn't lead to a solution, then backtrack
@@ -52,14 +45,11 @@ def solveNQueensUtil(board, col, slashCode, backslashCode, rowLookup, slashCodeL
 # prints placement of queens in the form of 1s. note that there may be more than one
 # solutions,this function prints one of the feasible solutions
 def solveNQueens():
-	board = [[0 for i in range(N)]
-				for j in range(N)]
+	board = [[0 for _ in range(N)] for _ in range(N)]
 	
 	# helper matrices
-	slashCode = [[0 for i in range(N)]
-					for j in range(N)]
-	backslashCode = [[0 for i in range(N)]
-						for j in range(N)]
+	slashCode = [[0 for _ in range(N)] for _ in range(N)]
+	backslashCode = [[0 for _ in range(N)] for _ in range(N)]
 	
 	# arrays to tell us which rows are occupied
 	rowLookup = [False] * N
@@ -75,9 +65,7 @@ def solveNQueens():
 			slashCode[rr][cc] = rr + cc
 			backslashCode[rr][cc] = rr - cc + 7
 	
-	if(solveNQueensUtil(board, 0, slashCode, backslashCode,
-						rowLookup, slashCodeLookup,
-						backslashCodeLookup) == False):
+	if(solveNQueensUtil(board, 0, slashCode, backslashCode, rowLookup, slashCodeLookup, backslashCodeLookup) == False):
 		print("Solution does not exist")
 		return False
 		
