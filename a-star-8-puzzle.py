@@ -62,16 +62,22 @@ class PuzzleState:
 
     def print_solution(self):
         moves = []
+        states = []
         node = self
         while node:
             moves.append(node.move)
+            states.append(node.puzzle)
             node = node.parent
 
         moves.reverse()
+        states.reverse()
         print("Solution Path:")
-        for move in moves:
-            print(move)
-        print("")
+        for move, state in zip(moves, states):
+            print("Move:", move)
+            print("State:")
+            for row in state:
+                print(row)
+            print("")
 
 def solve_puzzle(start_state):
     open_list = []
