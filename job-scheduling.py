@@ -35,3 +35,6 @@ arr = [['a', 2, 100],
 
 print("Following is maximum profit sequence of jobs")
 printJobScheduling(arr, 3)
+
+# Time Complexity: O(N log N)
+# Auxiliary Space: O(N)

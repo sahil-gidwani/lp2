@@ -73,3 +73,17 @@ def solveNQueens():
 	return True
 
 solveNQueens()
+
+# Time Complexity: The time complexity of the solver algorithm is O(N!), 
+# where N is the number of rows and columns in the square board. 
+# This is because for each column, the algorithm tries to place a queen in each row and 
+# then recursively tries to place the queens in the remaining columns. 
+# The number of possible combinations of queen placements in the board is N! since there can 
+# be only one queen in each row and each column.
+
+# Space Complexity: The space complexity of the solver algorithm is O(N^2), 
+# where N is the number of rows and columns in the square board. T
+# his is because we are using a 2D vector to represent the board, which takes up N^2 space. 
+# Additionally, we are using three boolean arrays to keep track of the occupied rows and diagonals, 
+# which take up 2N-1 space each. Therefore, the total space complexity is O(N^2 + 6N – 3), 
+# which is equivalent to O(N^2).

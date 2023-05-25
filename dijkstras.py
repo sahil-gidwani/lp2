@@ -69,3 +69,6 @@ print("Graph:")
 g.displayGraph()
 
 g.dijkstra(0)
+
+# Time Complexity: O(E * logV), Where E is the number of edges and V is the number of vertices.
+# Auxiliary Space: O(V)

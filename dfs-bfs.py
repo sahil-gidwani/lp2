@@ -80,3 +80,6 @@ g.DFS(0)
 
 print("Following is Breadth First Traversal (starting from vertex 0)")
 g.BFS(0)
+
+# Time Complexity : O(V + E) where V is the number of vertices in graph and E is the number of edges
+# Auxiliary Space: O(V)

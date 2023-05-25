@@ -75,3 +75,6 @@ print("Graph:")
 g.displayGraph()
 
 g.primMST()
+
+# Time Complexity: O(V^2)
+# Auxiliary Space: O(V)

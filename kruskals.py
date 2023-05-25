@@ -81,3 +81,5 @@ g.addEdge(1, 3, 15)
 g.addEdge(2, 3, 4)
 
 g.KruskalMST()
+
+# Time Complexity: O(E * logE) or O(E * logV)

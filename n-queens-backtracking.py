@@ -66,3 +66,6 @@ def solveNQ():
 	return True
 
 solveNQ()
+
+# Time Complexity: O(N!)
+# Auxiliary Space: O(N^2)
